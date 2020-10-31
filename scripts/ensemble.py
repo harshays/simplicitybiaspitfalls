@@ -71,20 +71,6 @@ class Ensemble(nn.Module):
         self = self.cpu() 
         return stats
 
-    # def adv_fit_classifier(self, tr_dl, te_dl, attack, device=None, lr=0.05, max_epochs=50, min_loss=0.01, epoch_gap=2):
-    #     device = gu.get_device(None) if device is None else device
-    #     self = self.to(device)
-
-    #     tro_dl = self.get_output_loader(tr_dl, device)
-    #     teo_dl = self.get_output_loader(te_dl, device)
-        
-    #     opt = optim.SGD(self.linear.parameters(), lr=lr)
-    #     stats = utils.pgd_adv_fit_model(self.linear, opt, tro_dl, teo_dl, attack, device=device, 
-    #                                     max_epochs=max_epochs, epoch_gap=epoch_gap, min_loss=min_loss)
-
-    #     self = self.cpu()
-    #     return stats
-
 class EnsembleLinear(Ensemble):
 
     def _get_classifier(self):
