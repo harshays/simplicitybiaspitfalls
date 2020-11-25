@@ -10,7 +10,15 @@ Our code is run with Python 3.7.3, Torch 1.1.0, Torchvision 0.3.0, Ubuntu 18.04.
 
 ---
 
-If you find this project useful in your research, please consider citing:
+If you find this project useful in your research, please consider citing the following publication:
 
-> H. Shah, K. Tamuly, A. Raghunathan, P. Jain, and P. Netrapalli, “The Pitfalls of Simplicity Bias in Neural Networks,” in Advances in Neural Information Processing Systems (NeurIPS), 2020.
+```
+@article{shah2020pitfalls,
+  title={The pitfalls of simplicity bias in neural networks},
+  author={Shah, Harshay and Tamuly, Kaustav and Raghunathan, Aditi and Jain, Prateek and Netrapalli, Praneeth},
+  journal={Advances in Neural Information Processing Systems},
+  volume={33},
+  year={2020}
+}
+```
 
