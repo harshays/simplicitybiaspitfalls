@@ -1,4 +1,4 @@
-### The Pitfalls of Simplicity Bias in Neural Networks
+## The Pitfalls of Simplicity Bias in Neural Networks
 
 ### Summary
 
@@ -22,7 +22,7 @@ If you find this project useful in your research, please consider citing the fol
 
 ```
 @article{shah2020pitfalls,
-  title={The pitfalls of simplicity bias in neural networks},
+  title={The Pitfalls of Simplicity Bias in Neural Networks},
   author={Shah, Harshay and Tamuly, Kaustav and Raghunathan, Aditi and Jain, Prateek and Netrapalli, Praneeth},
   journal={Advances in Neural Information Processing Systems},
   volume={33},
