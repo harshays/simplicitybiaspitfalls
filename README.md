@@ -2,7 +2,7 @@
 
 ### Summary
 
-This repository consists of code primitives and Jupyter notebooks that can be used to replicate and extend the findings presented in the paper "The Pitfalls of Simplicity Bias in Neural Networks" ([link](https://arxiv.org/abs/2006.07710)). In addition to the code (in scripts/) to generate the proposed datasets, we provide five Jupyter notebooks:
+This repository consists of code primitives and Jupyter notebooks that can be used to replicate and extend the findings presented in the paper "The Pitfalls of Simplicity Bias in Neural Networks" ([link](https://arxiv.org/abs/2006.07710)). In addition to the code (in scripts/) to generate the proposed datasets, we provide six Jupyter notebooks:
 
 1. ```01_extremeSB_slab_data.ipynb``` shows the simplicity bias of fully-connected networks trained on synthetic slab-structured datasets.
 2. ```02_extremeSB_mnistcifar_data.ipynb``` highlights simplicity bias of commonly-used convolutional neural networks (CNNs) on the concatenated MNIST-CIFAR dataset,
