@@ -9,6 +9,8 @@ This repository consists of code primitives and Jupyter notebooks that can be us
 3. ```03_suboptimal_generalization.ipynb``` analyzes the effect of extreme simplicity bias on standard generalization.
 4. ```04_effect_of_ensembles.ipynb``` studies the effectiveness of ensembles of independently trained methods in mitigating simplicity bias and its pitfalls.
 5. ```05_effect_of_adversarial_training.ipynb``` evaluates the effectiveness of adversarial training in mitigating simplicity bias. 
+6. ```06_uaps.ipynb``` demonstrates how extreme simplicity bias can lead to small-norm and data-agnostic "universal" adversarial perturbations that nullify performance of SGD-trained neural networks.
+
 
 Please check out our [paper](https://arxiv.org/abs/2006.07710) or [poster](https://drive.google.com/file/d/10McXcIyTM8pxJE2edqcvO2cBxmq8is2P/view?usp=sharing) for more details.  
 
