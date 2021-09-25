@@ -200,8 +200,8 @@ def compute_loss_and_accuracy_from_dl(dl, model, loss_fn, sample_pct=1.0, device
 
             correct = (pred==yb).sum().float()
             n = float(len(xb))
-            losses.append(loss)
-            accs.append(correct/n)
+            losses.append(loss.item())
+            accs.append((correct/n).item())
             bss.append(n)
 
             num_eval += n
