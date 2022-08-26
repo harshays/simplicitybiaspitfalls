@@ -12,7 +12,7 @@ This repository consists of code primitives and Jupyter notebooks that can be us
 6. ```06_uaps.ipynb``` demonstrates how extreme simplicity bias can lead to small-norm and data-agnostic "universal" adversarial perturbations that nullify performance of SGD-trained neural networks.
 
 
-Please check out our [paper](https://arxiv.org/abs/2006.07710) or [poster](https://drive.google.com/file/d/10McXcIyTM8pxJE2edqcvO2cBxmq8is2P/view?usp=sharing) for more details.  
+Please check out our [paper](https://arxiv.org/abs/2006.07710) or [poster](http://harshay.me/pdf/poster_neurips20_simplicitybias.pdf) for more details.  
 
 ###  Setup
 
