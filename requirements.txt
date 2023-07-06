@@ -4,7 +4,7 @@ matplotlib==3.0.3
 torch==1.1.0.post2
 requests==2.21.0
 tqdm==4.31.1
-scipy==1.2.1
+scipy==1.10.0
 numpy==1.19.2
 pandas==0.24.2
 pytorch_lightning==0.3.6.9
