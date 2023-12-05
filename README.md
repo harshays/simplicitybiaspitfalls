@@ -1,6 +1,9 @@
 ## The Pitfalls of Simplicity Bias in Neural Networks
 
-### Summary
+### Additional Summary
+The repository builds on the existing repository and adds some more experiments to investigate SB better. 
+
+### Original Summary
 
 This repository consists of code primitives and Jupyter notebooks that can be used to replicate and extend the findings presented in the paper "The Pitfalls of Simplicity Bias in Neural Networks" ([link](https://arxiv.org/abs/2006.07710)). In addition to the code (in scripts/) to generate the proposed datasets, we provide six Jupyter notebooks:
 
