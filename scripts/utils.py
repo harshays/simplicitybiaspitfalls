@@ -419,7 +419,7 @@ def pgd_adv_fit_model(model, opt, tr_dl, te_dl, attack, eval_attack=None, device
 def fit_model(model, loss, opt, train_dl, valid_dl, sch=None, epsilon=1e-2, is_loss_epsilon=False, update_gap=50, update_print_gap=50, gap=None, 
               print_info=True, save_grads=False, test_dl=None, skip_epoch_eval=True, sample_pct=0.5, sample_loss_threshold=0.75, save_models=False, 
               print_grads=False, print_model_layers=False, tr_batch_fn=None, te_batch_fn=None, device=None, max_updates=800_000, patience_updates=1, 
-              enable_redo=False, save_best_model=True, save_init_model=True, max_epochs=100000, **misc):
+              enable_redo=False, save_best_model=True, save_init_model=True, max_epochs=100000, mi_loss_function=None, **misc):
 
     # setup update metadata
     MAX_LOSS_VAL = 1000000.
@@ -500,6 +500,10 @@ def fit_model(model, loss, opt, train_dl, valid_dl, sch=None, epsilon=1e-2, is_l
                 bloss = loss(out, y)
             except:
                 assert False, "unknown loss function"
+
+        if mi_loss_function is not None:
+            mi_loss = mi_loss_function(x)
+            b_loss += mi_loss
 
         bloss.backward()
         if print_grads and print_info: print_model_gradients(model)
