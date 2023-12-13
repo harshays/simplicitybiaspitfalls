@@ -503,7 +503,7 @@ def fit_model(model, loss, opt, train_dl, valid_dl, sch=None, epsilon=1e-2, is_l
 
         if mi_loss_function is not None:
             mi_loss = mi_loss_function(x)
-            b_loss += mi_loss
+            bloss += mi_loss
 
         bloss.backward()
         if print_grads and print_info: print_model_gradients(model)
