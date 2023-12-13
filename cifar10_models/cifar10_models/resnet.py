@@ -101,7 +101,7 @@ class Bottleneck(nn.Module):
 
 class ResNet(nn.Module):
 
-    def __init__(self, block, layers, num_classes=10, zero_init_residual=False,
+    def __init__(self, block, layers, num_classes=10, dropout=False, zero_init_residual=False,
                  groups=1, width_per_group=64, replace_stride_with_dilation=None,
                  norm_layer=None):
         super(ResNet, self).__init__()
@@ -111,6 +111,7 @@ class ResNet(nn.Module):
 
         self.inplanes = 64
         self.dilation = 1
+        self.dropout = dropout
         if replace_stride_with_dilation is None:
             # each element in the tuple indicates if we should replace
             # the 2x2 stride with a dilated convolution instead
@@ -136,6 +137,7 @@ class ResNet(nn.Module):
         self.layer4 = self._make_layer(block, 512, layers[3], stride=2,
                                        dilate=replace_stride_with_dilation[2])
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
+        self.dropout_l = nn.Dropout(p=0.5)
         self.fc = nn.Linear(512 * block.expansion, num_classes)
 
         for m in self.modules():
@@ -192,13 +194,15 @@ class ResNet(nn.Module):
 
         x = self.avgpool(x)
         x = x.reshape(x.size(0), -1)
+        if self.dropout:
+            x = self.dropout_l(x)
         x = self.fc(x)
 
         return x
 
 
-def _resnet(arch, block, layers, pretrained, progress, device, **kwargs):
-    model = ResNet(block, layers, **kwargs)
+def _resnet(arch, block, layers, pretrained, progress, device, dropout, **kwargs):
+    model = ResNet(block, layers, dropout, **kwargs)
     if pretrained:
         script_dir = os.path.dirname(__file__)
         state_dict = torch.load(script_dir + '/state_dicts/'+arch+'.pt', map_location=device)
@@ -217,7 +221,7 @@ def resnet18(pretrained=False, progress=True, device='cpu', **kwargs):
                    **kwargs)
 
 
-def resnet34(pretrained=False, progress=True, device='cpu', **kwargs):
+def resnet34(pretrained=False, progress=True, device='cpu', dropout: bool = False, **kwargs):
     """Constructs a ResNet-34 model.
 
     Args:
@@ -228,14 +232,14 @@ def resnet34(pretrained=False, progress=True, device='cpu', **kwargs):
                    **kwargs)
 
 
-def resnet50(pretrained=False, progress=True, device='cpu', **kwargs):
+def resnet50(pretrained=False, progress=True, device='cpu', dropout: bool = False, **kwargs):
     """Constructs a ResNet-50 model.
 
     Args:
         pretrained (bool): If True, returns a model pre-trained on ImageNet
         progress (bool): If True, displays a progress bar of the download to stderr
     """
-    return _resnet('resnet50', Bottleneck, [3, 4, 6, 3], pretrained, progress, device,
+    return _resnet('resnet50', Bottleneck, [3, 4, 6, 3], pretrained, progress, device, dropout,
                    **kwargs)
 
 
